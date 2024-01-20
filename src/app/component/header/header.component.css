@@ -1,0 +1,31 @@
+/* Header cabcera*/
+header{
+    background-color: var(--with-solid); 
+    padding:var(--spacing-26);
+ }
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     
+ }
+ .navbar_logo {
+     max-width: 300px;
+ }
+ .navbar_menu {
+     display: flex;
+     align-items: center;
+     gap:var(--spacing-24)
+ }
+ 
+ .navbar_item_link {
+     font-family: var(--base-font);
+     font-size: var(--text-24);
+     font-weight: bold;
+     padding: var(--spacing-8) var(--spacing-16);
+     display: inline-block;
+     transition: background .3s ease-in-out;
+ }
+ .navbar_item_link:hover{
+    background-color: var(--yellow_solid);
+}
