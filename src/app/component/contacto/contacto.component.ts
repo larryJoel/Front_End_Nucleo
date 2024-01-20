@@ -3,12 +3,12 @@ import { TresUltimosPostComponent } from '../tres-ultimos-post/tres-ultimos-post
 import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
 
 @Component({
-  selector: 'app-post',
+  selector: 'app-contacto',
   standalone: true,
   imports: [TresUltimosPostComponent, BarraLateralComponent],
-  templateUrl: './post.component.html',
-  styleUrl: './post.component.css'
+  templateUrl: './contacto.component.html',
+  styleUrl: './contacto.component.css'
 })
-export class PostComponent {
+export class ContactoComponent {
 
 }

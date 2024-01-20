@@ -1,0 +1,70 @@
+@import url('../home/home.component.css');
+
+.content_form_contact{
+    display: flex;
+    justify-content: center;
+}
+
+.content_form_contact form {
+    background-color: rgb(247, 249, 240);
+    padding: 20px;
+    border-radius: 10px;
+    width: 340px;
+}
+
+.content_form_contact input, textarea {
+    border: 0;
+    outline: none;
+    width: 300px;
+}
+
+.field{
+    border: solid 1px #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.centrar_boton{
+    text-align: center;
+}
+
+.boton_enviar{
+    background-color: var(--yellow_solid);
+    text-align: center;
+    align-items: center;
+    font-size: var(--text-32);
+    font-weight: bold;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin: 5px;
+}
+
+.container_body{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+}
+
+.articles_title{
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font-size: var(--text-40);
+    color: var(--blue-solid);
+}
+
+.picture_box_ppal{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    
+}
+
+.picture_box_ppal img{
+    width: 500px;
+    border-radius: 15px;
+}

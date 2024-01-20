@@ -1,0 +1,7 @@
+@import url('../home/home.component.css');
+.ultimo-post-titulo{
+    text-align: center;
+    font-size: var(--text-40);
+    font-weight: bold;
+    padding-top: 25px;
+}

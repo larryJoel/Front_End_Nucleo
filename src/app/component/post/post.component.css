@@ -1,0 +1,28 @@
+@import url('../home/home.component.css');
+.container_body{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+}
+
+.articles_title{
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font-size: var(--text-40);
+    color: var(--blue-solid);
+}
+
+.picture_box_ppal{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    
+}
+
+.picture_box_ppal img{
+    width: 500px;
+    border-radius: 15px;
+}
