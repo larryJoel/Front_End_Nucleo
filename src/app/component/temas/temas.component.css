@@ -1,0 +1,38 @@
+@import url('../home/home.component.css');
+.container_body{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+}
+
+.articles_title{
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font-size: var(--text-40);
+    color: var(--blue-solid);
+}
+
+.content_buscador{
+    text-align: center;
+    margin-top: -20px;
+}
+
+input{
+    border: 0;
+    outline: none;
+    width: 550px;
+    margin: 5px 0 15px 0;
+}
+
+.buscar_temas{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--black-medium);
+}
+
+.content_buscar_mensaje{
+    text-align: center;
+}

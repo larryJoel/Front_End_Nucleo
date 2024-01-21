@@ -3,23 +3,30 @@
 .content_form_contact{
     display: flex;
     justify-content: center;
+    
 }
 
 .content_form_contact form {
-    background-color: rgb(247, 249, 240);
-    padding: 20px;
+    background-color: rgb(242, 247, 224);
+    padding: 25px;
     border-radius: 10px;
-    width: 340px;
+    width: 600px;
+}
+
+.content_form_contact p{
+    font-weight: bold;
+    font-size: var(--text-24-5);
 }
 
 .content_form_contact input, textarea {
     border: 0;
     outline: none;
-    width: 300px;
+    width: 550px;
+    margin: 5px 0 15px 0;
 }
 
 .field{
-    border: solid 1px #ccc;
+    /* border: solid 1px #ecae27; */
     padding: 10px;
     border-radius: 5px;
 }
