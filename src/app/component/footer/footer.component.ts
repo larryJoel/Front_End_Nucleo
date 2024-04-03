@@ -9,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  irAlInicio(){
+    window.scrollTo(0, 0);
+  }
 }

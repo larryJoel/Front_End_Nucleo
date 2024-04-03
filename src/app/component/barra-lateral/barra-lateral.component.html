@@ -1,16 +1,20 @@
 <section class="aside">
     <aside class="aside_container container">
-        <form class="aside_form" action="">
-            <p>Buscar</p>
-            <label for="">Encontrar Artículo</label>
-            <input type="text">
-        </form>
+        <form autocomplete="off" (ngSubmit)="enviar(regist)" #regist="ngForm" novalidate class="aside_form">
+            <p>Suscríbete para recibir los artículos cada semana</p>
+            <label>Nombre</label>
+            <small class="validaciones" *ngIf="regist.controls['Nombre']?.invalid && (regist.controls['Nombre']?.dirty || regist.controls['Nombre']?.touched)">Error en el nombre</small>
+            <input type="text" class="field formControl" name="Nombre" [(ngModel)]="email.Nombre" required>
         
-        <form class="aside_form" action="">
-            <p>Suscribirse</p>
-            <label for="">Correo Electrónico</label>
-            <input type="text">
-        </form>
-        <a class="hero_title_link" href="">Contactanos</a>
+            <label>Correo Electrónico</label>
+            <small class="validaciones" *ngIf="regist.controls['Email']?.invalid && (regist.controls['Email']?.dirty || regist.controls['Email']?.touched)">Error en el correo electrónico</small>
+            <input type="email" class="field formControl" name="Email" [(ngModel)]="email.Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        
+            <div>
+                <button class="boton_enviar" type="submit" [disabled]="!regist.valid">Aceptar</button>
+            </div>
+        </form>   
+        <br>
+        <a class="hero_title_link" routerLink="/contacto">Contactanos</a>
     </aside>
 </section>

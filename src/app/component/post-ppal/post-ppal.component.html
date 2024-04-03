@@ -1,0 +1,34 @@
+ <article class="articles_box_ppal">
+              <a [routerLink]="['/post', post.id]" (click)= "incrementarVisitas(post.id)">
+                  <div class="content_art_ppal">
+                      <h3>{{post.titulo}}</h3>
+                      <p>{{post.intro}}</p>
+                      <p>******</p>
+                      <p>{{post.conclusion}}</p>
+                      <p class="vermas">ver mas..</p>
+                  </div>
+                  <picture class="article_image_ppal">
+                      <img src="{{post.image}}" alt="">
+                  </picture>
+              </a>
+            </article>
+            <div class="cont_indicadores">
+              <a routerLink="/post">
+                <picture>
+                    <img src="../assets/img/eye-line.svg" alt="">
+                    <p>{{post.visitas}}</p>
+                </picture>
+              </a>
+                <a routerLink="/post">
+                  <picture>
+                      <img src="../assets/img/comment-outlined.svg" alt="">
+                      <p>{{post.cantComentarios}}</p>
+                  </picture>
+                </a>
+                <a (click)="incrementarLikes(post.id)">
+                    <picture>
+                    <img src="../assets/img/heart-bold.svg" alt="">
+                    <p>{{post.likes}}</p>
+                  </picture>
+                </a>
+            </div>

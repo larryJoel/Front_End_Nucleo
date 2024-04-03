@@ -75,3 +75,9 @@ h1{
     width: 500px;
     border-radius: 15px;
 }
+
+.validaciones{
+    color:red;
+    font-weight: bold; 
+    font-size: 12px;
+}

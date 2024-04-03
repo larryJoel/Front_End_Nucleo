@@ -9,7 +9,11 @@
                 </div>
                     <div class="content_art_ppal">
                         <div class="content_buscador">
-                            <input class="buscar_temas" type="text" placeholder="Agregue un temas...">
+                            <input #txtBuscar
+                                (keyup.enter)="buscarPost( txtBuscar.value)"
+                                class="buscar_temas" 
+                                type="text" 
+                                placeholder="Agregue un temas...">
                         </div>
                         <div class="content_buscar_mensaje">
                             <h3>Algo para recordar...</h3>
@@ -17,6 +21,41 @@
                         </div>
                     </div>
             </article>
+            <ul class="content_last_art">
+                @for (item of posts; track $index) {
+                  <li>
+                    <article class="articles_box">
+                     <a [routerLink]="['/post',item.id]" (click)="incrementarVisitas(item.id)">
+                              <picture class="article_image">
+                                  <img src="{{item.image}}" 
+                                   alt="imagen">
+                              </picture>
+                              <div class="article_text_content">
+                                  <h3>{{item.titulo}}</h3>
+                                  <p>{{item.intro}}</p>
+                                  <p class="vermas">ver mas..</p>
+                              </div>
+                         </a>
+                        </article>
+                        <div class="cont_indicadores">
+                            <picture>
+                                <img src="../assets/img/eye-line.svg" alt="">
+                                <p>{{item.visitas}}</p>
+                            </picture>
+                            <picture>
+                                  <img src="../assets/img/comment-outlined.svg" alt="">
+                                  <p>{{item.cantComentarios}}</p>
+                            </picture>
+                            <a (click)="incrementarLikes(item.id)">
+                              <picture>
+                                  <img src="../assets/img/heart-bold.svg" alt="">
+                                  <p>{{item.likes}}</p>
+                              </picture>
+                            </a>
+                        </div>
+                  </li>
+                }
+            </ul>
             <app-tres-ultimos-post></app-tres-ultimos-post>
         </section>
     </div>

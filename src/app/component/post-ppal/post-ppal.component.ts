@@ -1,47 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { BarraLateralComponent } from '../barra-lateral/barra-lateral.component';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { PostComponent } from '../post/post.component';
 import { Post } from '../../interfaces/Post.interface';
 import { AllpostService } from '../../services/allpost.service';
-import { TresUltimosPostComponent } from '../tres-ultimos-post/tres-ultimos-post.component';
-import { Comentario } from '../../interfaces/Comentario.interface';
-import { NgIf } from '@angular/common';
-import { PostPpalComponent } from '../post-ppal/post-ppal.component';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-post-ppal',
   standalone: true,
-  imports: [BarraLateralComponent, PostPpalComponent, RouterLink, PostComponent,TresUltimosPostComponent, NgIf],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  imports: [RouterLink],
+  templateUrl: './post-ppal.component.html',
+  styleUrl: './post-ppal.component.css'
 })
-
-/* export class HomeComponent {
-
-} */
-export class HomeComponent implements OnInit {
-  loading: boolean = true;
-  post:Post[]=[];
+export class PostPpalComponent implements OnInit{
+  post:any;
   postId:number=0;
+  loading: boolean = true;
+  
   constructor(
     private allPostService: AllpostService,
     private route: Router
     ){}
-
-  ngOnInit(): void {   
+  
+  ngOnInit(): void {
     this.allPostService.getPost().subscribe(
-      (data:Post[])=>{
-        this.post = (data);
+      (data: Post[]) => {
+        // Ordenar los posts por fecha de publicación de manera descendente
+        this.post = data.sort((a, b) => new Date(b.creadoEn).getTime() - new Date(a.creadoEn).getTime())[0];
+        console.log(this.post);
         this.loading = false;
-        //console.log(this.post);
       },
-      (error) =>{
+      (error) => {
         console.error("Error al obtener datos", error);
       }
-    )
-
-  } 
+    );
+  }
 
   incrementarVisitas(id:number):void{
     this.allPostService.incrementVisitas(id).subscribe({
@@ -69,14 +60,15 @@ export class HomeComponent implements OnInit {
 
   actualizarHome():void{
     this.allPostService.getPost().subscribe(
-      (data:Post[])=>{
-        this.post = (data);
-        //console.log(this.post);
-        
+      (data: Post[]) => {
+        // Ordenar los posts por fecha de publicación de manera descendente
+        this.post = data.sort((a, b) => new Date(b.creadoEn).getTime() - new Date(a.creadoEn).getTime())[0];
+  
+        this.loading = false;
       },
-      (error) =>{
+      (error) => {
         console.error("Error al obtener datos", error);
       }
-    )
+    );
   }
 }

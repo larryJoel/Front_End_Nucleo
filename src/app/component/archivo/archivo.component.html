@@ -9,12 +9,17 @@
                 </div>
                     <div class="content_art_ppal">
                         <div class="content_buscador">
-                            <input class="buscar_temas" type="text" placeholder="Agregue un temas...">
+                            <input #txtBuscar
+                                   (keyup.enter)="BuscarPost( txtBuscar.value )"
+                                   class="buscar_temas" 
+                                   type="search" 
+                                   placeholder="Agregue un temas..."
+                                   aria-label="search">
                         </div>
-                        <div class="content_buscar_mensaje">
+                        <!-- <div class="content_buscar_mensaje">
                             <h3>Algo para recordar...</h3>
                             <p>Si buscas la verdad, podrás encontrar confort al final; si buscas confort, no encontrarás ni verdad ni confort. Clive Staples Lewis (1898-1963) Escritor británico.</p>
-                        </div>
+                        </div> -->
                     </div>
             </article>
             <app-tres-ultimos-post></app-tres-ultimos-post>

@@ -1,14 +1,15 @@
 <footer class="footer">
     <nav class="footer_nav container">
         <ul class="footer_navbar_items">
-            <li class="footer_nav_item"><a routerLink="/archivo" >Archivo</a></li>
-            <li class="footer_nav_item"><a routerLink="/temas" >Temas</a></li>
-            <li class="footer_nav_item"><a routerLink="testimonio">Testimonios</a></li>
-            <li class="footer_nav_item"><a routerLink="/acerca">Acerca de..</a></li>
-            <li class="footer_nav_item"><a routerLink="/contacto">Contáctanos</a></li>
+            <li class="footer_nav_item"><a routerLink="/home" (click)="irAlInicio()">Home</a></li>
+            <!-- <li class="footer_nav_item"><a routerLink="/archivo" >Archivo</a></li> -->
+            <li class="footer_nav_item"><a routerLink="/temas" (click)="irAlInicio()">Temas</a></li>
+            <li class="footer_nav_item"><a routerLink="testimonio"(click)="irAlInicio()">Testimonios</a></li>
+            <li class="footer_nav_item"><a routerLink="/acerca"(click)="irAlInicio()">Acerca de..</a></li>
+            <li class="footer_nav_item"><a routerLink="/contacto"(click)="irAlInicio()">Contáctanos</a></li>
         </ul>
         <picture>
-            <a routerLink="/">
+            <a routerLink="/" (click)="irAlInicio()">
                 <img src="../../../assets/img/titulo_blanco.svg" alt="">
             </a>
         </picture>

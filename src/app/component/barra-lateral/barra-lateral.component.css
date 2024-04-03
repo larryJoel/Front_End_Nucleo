@@ -1,1 +1,31 @@
 @import url('../home/home.component.css');
+
+.aside_form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.aside_form label{
+    margin: 5px 0px 0px 0px;
+    font-size: var(--text-20);
+}
+
+.field{
+    text-align: center;
+}
+
+.boton_enviar{
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: var(--blue-solid);
+}
+
+.validaciones{
+    color:red;
+    font-weight: bold; 
+    font-size: 12px;
+}

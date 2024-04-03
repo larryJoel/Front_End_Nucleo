@@ -9,17 +9,39 @@
                 </div>
                     <div class="content_art_ppal">
                         <div class="content_form_contact">
-                            <form action="">
+                            <form autocomplete="off"
+                                (ngSubmit)="enviar(forma)"
+                                  #forma ="ngForm"
+                                  novalidate>
                                 <p>Nombre:</p>
-                                <input type="text" class="field">
+                                <small class="validaciones" *ngIf="forma.controls['Nombre']?.invalid && (forma.controls['Nombre']?.dirty || forma.controls['Nombre']?.touched)">
+                                    El nombre es obligatorio
+                                </small>
+                                <input type="text" class="field formControl" name="Nombre" 
+                                [(ngModel)]="contacto.Nombre" required>
                                 <p>Correo Electrónico:</p>
-                                <input type="text" class="field">
-                                <p>Asunto:</p>
-                                <input type="text" class="field">
+                                <small class="validaciones" *ngIf="forma.controls['Email']?.invalid && (forma.controls['Email']?.dirty || forma.controls['Email']?.touched)">
+                                    El email es obligatorio
+                                </small>
+                                <input type="email" class="field formControl"name="Email"
+                                [(ngModel)]="contacto.Email"
+                                required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                                 <p>Mensaje:</p>
-                                <textarea class="field"></textarea>
+                                <small class="validaciones" *ngIf="forma.controls['Mensaje']?.invalid && (forma.controls['Mensaje']?.dirty || forma.controls['Mensaje']?.touched)">
+                                    El comentario es obligatorio
+                                </small>
+                                <textarea 
+                                class="field formControl"
+                                name="Mensaje"
+                                [(ngModel)]="contacto.Mensaje"
+                                required>
+                                </textarea>
                                 <div class="centrar_boton">
-                                    <button class="boton_enviar">Enviar</button>
+                                    <button 
+                                       class="boton_enviar"
+                                       type="submit"
+                                       [disabled]="!forma.valid"
+                                    >Enviar</button>
                                 </div>
                             </form>
                         </div>

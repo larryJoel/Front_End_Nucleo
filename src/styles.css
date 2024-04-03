@@ -51,6 +51,17 @@ input[type="text"]::placeholder {
     font-weight: 500;
 }
 
+/* Definir la animación */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Aplicar la animación a los elementos que están siendo animados */
+  .fade-in-out {
+    animation: fadeInOut 0.5s ease-in-out;
+  }
+
 
 :root {
    
@@ -66,7 +77,7 @@ input[type="text"]::placeholder {
 --with-solid:#ffffff;
 
 --yellow_solid: #FFBA07;
-
+--yellow_palid: #fce6a9;
 
  /* Typography */
  --base-font: 'Inter', sans-serif;

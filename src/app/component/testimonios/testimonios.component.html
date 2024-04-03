@@ -7,18 +7,23 @@
                 <div class="articles_title">
                     <h1>Testimonios</h1>
                     <p>Opiniones sobre el sitio y el autor</p>
+                    <br>
                 </div>
                     <div class="content_art_ppal">
-                     
+                        <div *ngIf="loading" class="loading-indicator">Cargando...</div>
                         <div class="container-testimonial">
+                            @for (item of test; track $index) {
                             <div class="container-person">
                                 <div class="testimonial">
                                     <div class="photo-perfil">
-                                        <img src="https://img.freepik.com/fotos-premium/imagenes-frescas-tranquilas-foto-perfil-whatsapp-arte-generado-ai_873370-5052.jpg" alt="">
+                                        <img src="{{item.foto}}" alt="">
                                     </div>
-                                    <h2>Nombre del testigo</h2>
-                                    <h4>Cargo</h4>
-                                    <p>Testimonio: Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda esse fugiat aspernatur optio est quo voluptas ducimus possimus nesciunt!</p>
+                                    <h2>{{item.nombre}}</h2>
+                                    <h4>{{item.cargo}}</h4>
+                                    <details>
+                                        <summary>Ver más..</summary>
+                                        <p>{{item.recomendacion}}</p>
+                                    </details>
                     
                                     <div class="container-redes">
                                         <img src="../../../assets/img/linkedin.svg" style="width: 35px;" alt="linkedin">
@@ -26,8 +31,8 @@
                                         <label class=""></label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="container-person">
+                            </div>}
+                            <!-- <div class="container-person">
                                 <div class="testimonial">
                                     <div class="photo-perfil">
                                         <img src="https://b2472105.smushcdn.com/2472105/wp-content/uploads/2023/01/Perfil-Profesional-_280_1-819x1024.jpg?lossy=1&strip=1&webp=1" alt="">
@@ -58,7 +63,7 @@
                                         <label class=""></label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                        
                     </div>
